@@ -6,14 +6,13 @@ const addTask = async (event) => {
 
   // const { title, description } = JSON.parse(event.body);
   const { title, description } = event;
-  const createdAt = new Date();
   const id = v4();
 
   const newTask = {
     id,
     title,
     description,
-    createdAt,
+    done: false,
   };
 
   await dynamodb

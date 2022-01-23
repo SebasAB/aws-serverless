@@ -35,6 +35,20 @@ functions:
           path: /tasks
           method: get
 
+  updateTask:
+    handler: src/updateTask.updateTask
+    events:
+      - httpApi:
+          path: /tasks
+          method: put
+
+  deleteTask:
+    handler: src/deleteTask.deleteTask
+    events:
+      - httpApi:
+          path: /tasks
+          method: delete
+
 resources:
   Resources:
     TaskTable:

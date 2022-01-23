@@ -5,12 +5,12 @@ const addScheduleItem = async (event) => {
   const dynamodb = new AWS.DynamoDB.DocumentClient();
 
   // const { day, activity } = JSON.parse(event.body);
-  const { day, activity } = event;
+  const { dayName, activity } = event;
   const id = v4();
 
   const newScheduleItem = {
     id,
-    day,
+    dayName,
     activity,
   };
 

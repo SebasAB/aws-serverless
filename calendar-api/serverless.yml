@@ -35,6 +35,20 @@ functions:
           path: /schedule
           method: get
 
+  updateScheduleItem:
+    handler: src/updateScheduleItem.updateScheduleItem
+    events:
+      - httpApi:
+          path: /schedule
+          method: put
+
+  deleteScheduleItem:
+    handler: src/deleteScheduleItem.deleteScheduleItem
+    events:
+      - httpApi:
+          path: /schedule
+          method: delete
+
 resources:
   Resources:
     ScheduleTable:
