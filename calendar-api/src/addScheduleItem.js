@@ -21,10 +21,20 @@ const addScheduleItem = async (event) => {
     })
     .promise();
 
+  const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+  const result = await dynamodb
+    .scan({
+      TableName: "ScheduleTable",
+    })
+    .promise();
+
+  const scheduleItems = result.Items;
+
   return {
-    statusCode: 200,
+    status: 200,
     body: {
-      newScheduleItem,
+      scheduleItems,
     },
   };
 };

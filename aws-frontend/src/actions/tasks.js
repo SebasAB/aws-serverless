@@ -30,7 +30,7 @@ export const updateTask = (updatedTask) => async (dispatch) => {
 export const deleteTask = (id) => async (dispatch) => {
   try {
     const { data } = await api.deleteTask(id);
-    dispatch({ type: "UPDATE_TASK", payload: data });
+    dispatch({ type: "DELETE_TASK", payload: data });
   } catch (error) {
     console.log(error);
   }

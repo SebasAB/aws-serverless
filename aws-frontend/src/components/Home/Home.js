@@ -5,7 +5,7 @@ import { fetchTasks } from "../../actions/tasks";
 import { fetchScheduleItems } from "../../actions/schedule";
 
 import Tasks from "../Tasks/Tasks";
-import Schedule from "../Schedule/Schedule";
+import ScheduleItems from "../ScheduleItems/ScheduleItems";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const Home = () => {
       <div className="container">
         <div className="row">
           <div className="col-6">
-            <Schedule />
+            <ScheduleItems />
           </div>
           <div className="col-6">
             <Tasks />

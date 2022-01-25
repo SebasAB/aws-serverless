@@ -22,10 +22,18 @@ const addTask = async (event) => {
     })
     .promise();
 
+  const result = await dynamodb
+    .scan({
+      TableName: "TaskTable",
+    })
+    .promise();
+
+  const tasks = result.Items;
+
   return {
-    statusCode: 200,
+    status: 200,
     body: {
-      newTask,
+      tasks,
     },
   };
 };
